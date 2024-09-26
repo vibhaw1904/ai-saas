@@ -4,7 +4,8 @@
 // importing necessary functions
 import { useSession, signIn, signOut } from "next-auth/react"
 import Image from "next/image";
-
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 export default function Home() {
   // extracting data from usesession as session
   const { data: session } = useSession()
@@ -15,9 +16,9 @@ export default function Home() {
     return (
       <div className="w-full h-screen flex flex-col justify-center items-center">
         <div className="w-44 h-44 relative mb-4">
-        <Image
+        <img
           src={session.user?.image as string}
-          fill
+          
           alt=""
           className="object-cover rounded-full"
         />
@@ -33,8 +34,9 @@ export default function Home() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
         <p className="text-2xl mb-2">Not Signed In</p>
-        <button className="bg-blue-600 py-2 px-6 rounded-md mb-2" onClick={() => signIn('google')}>Sign in with google</button>
-        <button className="bg-none border-gray-300 border py-2 px-6 rounded-md mb-2" onClick={() => signIn('github')}>Sign in with github</button>
+       <Link href={'/signin'}>
+       <Button>Get started</Button>
+       </Link>
     </div>
   )
 
