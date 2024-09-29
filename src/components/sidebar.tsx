@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import { SideNav } from "./side-nav";
 import { NavItems } from "./static/side-nav";

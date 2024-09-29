@@ -2,21 +2,29 @@
 "use client";
 import Link from "next/link";
 
-import { type NavItem } from "@/types";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/hooks/useSidebar";
 import { buttonVariants } from "@/components/ui/button";
+import { Accordion } from "./ui/accordion";
+import { AccordionContent } from "./ui/accordion";
+import { AccordionItem } from "./ui/accordion";
+import { AccordionTrigger } from "./ui/accordion";
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/layout/subnav-accordion";
 import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
+
+import { type LucideIcon } from "lucide-react";
+
+export interface NavItem {
+    title: string;
+    href: string;
+    icon: LucideIcon;
+    color?: string;
+    isChidren?: boolean;
+    children?: NavItem[];
+}
 interface SideNavProps {
     items: NavItem[];
     setOpen?: (open: boolean) => void;
