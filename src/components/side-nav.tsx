@@ -16,6 +16,7 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 
 import { type LucideIcon } from "lucide-react";
+import { ModeToggle } from "./toggleTheme";
 
 export interface NavItem {
     title: string;
@@ -48,6 +49,9 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
 
     return (
         <nav className="space-y-2">
+            <div>
+              <ModeToggle/>
+            </div>
       {items.map((item) =>
         item.isChidren ? (
           <Accordion
@@ -58,6 +62,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
             value={openItem}
             onValueChange={setOpenItem}
           >
+          
             <AccordionItem value={item.title} className="border-none ">
               <AccordionTrigger
                 className={cn(
