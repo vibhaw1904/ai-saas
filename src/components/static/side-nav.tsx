@@ -1,4 +1,4 @@
-import { BookOpenCheck, LayoutDashboard } from "lucide-react";
+import {  LayoutDashboard,ImageIcon,VideoIcon,FileAudioIcon } from "lucide-react";
 
 
 import { type LucideIcon } from "lucide-react";
@@ -19,30 +19,24 @@ export const NavItems: NavItem[] = [
     color: "text-sky-500",
   },
   {
-    title: "Example",
-    icon: BookOpenCheck,
+    title: "Image Generator",
+    icon: ImageIcon,
     href: "/example",
-    color: "text-orange-500",
-    isChidren: true,
-    children: [
-      {
-        title: "Example-01",
-        icon: BookOpenCheck,
-        color: "text-red-500",
-        href: "/example/employees",
-      },
-      {
-        title: "Example-02",
-        icon: BookOpenCheck,
-        color: "text-red-500",
-        href: "/example/example-02",
-      },
-      {
-        title: "Example-03",
-        icon: BookOpenCheck,
-        color: "text-red-500",
-        href: "/example/example-03",
-      },
-    ],
+    color: "text-sky-500",
+   
+  },
+  {
+    title: "Video Generator",
+    icon: VideoIcon,
+    href: "/example",
+    color: "text-sky-500",
+   
+  },
+  {
+    title: "Audio Generator",
+    icon: FileAudioIcon,
+    href: "/example",
+    color: "text-sky-500",
+   
   },
 ];

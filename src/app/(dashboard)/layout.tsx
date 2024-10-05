@@ -1,4 +1,5 @@
 import Sidebar from "@/components/sidebar";
+import TopBar from "@/components/TopBar";
 
 const DashboardLayout=({
     children
@@ -8,6 +9,7 @@ const DashboardLayout=({
     return(
         <div className="h-full relative flex ">
             <div>
+                <TopBar/>
             <Sidebar/>
 
             </div>
